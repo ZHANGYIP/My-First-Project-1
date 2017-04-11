@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta >
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .calendar_header dl{
+            height: 40px;
+            line-height: 40px;
+            background: #8581de;
+            text-align: center;
+        }
+        .calendar_header dl:after{
+            content:"";
+            clear: both;
+            display: block;
+        }
+        .calendar_header dd{
+            float: left;
+            display:block;
+            margin-left: .2%;
+            width: 14%;
+            background: #ffa1da;
+        }
+        .calendar{
+            border:1px solid white;
+            width: 100%;
+            margin: auto;
+        }
+        .calendar_header,.calendar_footer{
+            clear: both;
+            height:40px;
+            line-height: 40px;
+            background: #3E48CC;
+        }
+        .calendar_title ul li{
+            float:left;
+            margin-left: 0.3%;
+            width: 33%;
+            text-align:center;
+            font-size: 20px;
+        }
+        .calendar_footer{
+            text-align:center;
+            background: #8581de;
+        }
+        .calendar_body ol{
+            list-style:none;
+        }
+        .calendar_body ol li{
+            float: left;
+            margin-top: 2px;
+            margin-left: .2%;
+            background: #c1d5ef;
+            width: 14%;
+            text-align: center;
+            line-height: 35px;
+        }
+        .calendar_body li.active{
+            background: #fdc5d8;
+        }
+        .calendar_body li.today{
+            background: #d74a48;
+        }
+        @media screen and (max-width:480px){
+            .calendar_footer{
+                display:none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="calendar_header">
+            <div class="calendar_title">
+                <ul>
+                    <li>&lt;</li>
+                    <li id="today">2017-02-24</li>
+                    <li>&gt;</li>
+                </ul>
+                <dl>
+                    <dd>日</dd>
+                    <dd>一</dd>
+                    <dd>二</dd>
+                    <dd>三</dd>
+                    <dd>四</dd>
+                    <dd>五</dd>
+                    <dd>六</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="calendar_body">
+            <div id="main"></div>
+        </div>
+        <div class="calendar_footer">
+            JAVASCRIPT日历
+        </div>
+    </div>
+<script>
+    var main=document.querySelector("#main");
+    var d=new Date();
+    var year= d.getFullYear();
+    var month= d.getMonth()+1;
+    var day= d.getDate();
+    // 本月第一天是星期几
+    var startDay=new Date(year,month-1,1).getDay();
+    // alert(startDay);
+    // 当前月有几天
+    var nDay=new Date(year,month,0).getDate();
+    // alert(nDay);
+    var str='';
+    str+="<ol>";
+         // 把本月第一天之前的星期循环出来
+        for(var i=0;i<startDay;i++){
+            str+="<li class='inactive'>空</li>";
+        }
+        // 显示本月所有天数；
+        for(var j=1;j<=nDay;j++){
+                if(j==day){
+                    str+="<li class='today'>"+j+"</li>";
+                }else{
+                    str+="<li class='active'>"+j+"</li>";
+                }
+            }
+    str+="</ol>";
+         // alert(str);
+    main.innerHTML=str;
+</script>
+</body>
+</html>

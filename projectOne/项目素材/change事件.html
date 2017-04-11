@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin:0; padding:0;}
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="" class="jumpTo" target="_blank"></a>
+   <select class="jump">
+        <option>选择坚果</option>
+        <option value="three.html">夏威夷果</option>
+        <option value="four.html">巴旦木</option>
+        <option value="five.html">碧根果</option>
+    </select>
+    <script>
+        var jump=document.querySelector("select");
+        var jumpTo=document.querySelector(".jumpTo")
+        jump.addEventListener("change",function(){
+            // open(this.value);
+            //
+            jumpTo.href=this.value;
+            jumpTo.click();
+
+        })
+        /*window.open(URL,name,features,replace)
+        * 窗口默认是会被浏览器拦截
+        * */
+    </script>
+   <!--
+   <select class="foo">
+       <option>选择坚果</option>
+       <option><a href="three.html">夏威夷果</a></option>
+       <option><a href="three.html">巴旦木</a></option>
+       <option><a href="three.html">碧根果</a></option>
+   </select>
+
+   -->
+
+</body>
+</html>

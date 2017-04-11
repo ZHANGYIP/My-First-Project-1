@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #demo{
+            width: 20px;
+            height: 20px;
+        }
+        div.active{
+            transform:rotate(120deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="3.jpg" id="demo"/>
+    <script>
+        var demo=document.querySelector("#demo");
+        var deg=0;
+        var opacity=1;
+        var timer=setInterval(function(){
+            deg++;
+            demo.style.transform="scale("+deg+") rotate("+deg+"deg)";
+            demo.style.borderRadius=deg+"px";
+            opacity-=0.01;
+            demo.style.opacity=opacity;
+            if(opacity<=0){
+                clearInterval(timer);
+            }
+        },50)
+        //demo.style.transform="rotate(45deg)";
+        // demo.className="active";
+    </script>
+</body>
+</html>

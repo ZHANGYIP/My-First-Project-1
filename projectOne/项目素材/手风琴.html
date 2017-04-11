@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .accordion{
+            border: 1px solid red;
+            width: 450px;
+            padding: 10px;
+        }
+        .accordion .panel ul{
+            border: 1px solid green;
+            height: 0;
+            overflow: hidden;
+           /* 过度效果*/
+            transition: all 0.5s ease;
+        }
+        .accordion .panel ul.active{
+           /*display: block;*/
+           height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 手风琴 -->
+    <div class="accordion">
+        <div class="panel">
+          <button>内容管理</button>
+          <ul class="active">
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+        <div class="panel">
+            <button>内容管理</button>
+            <ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+        <div class="panel">
+            <button>内容管理</button>
+            <ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var btns=document.querySelectorAll(".accordion button");
+        var uls=document.querySelectorAll(".accordion ul");
+        console.log(uls);
+        for(var i=0;i<btns.length;i++){
+            btns[i].setAttribute("index",i);
+            btns[i].addEventListener("mouseover",function(){
+                for(var j=0;j<btns.length;j++){
+                    uls[j].className="";
+                }
+                uls[this.getAttribute("index")].className="active";
+            })
+        }
+    </script>
+</body>
+</html>

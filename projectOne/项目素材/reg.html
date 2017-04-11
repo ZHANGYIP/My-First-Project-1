@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Tools.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height:1000px;
+        }
+        .reg{
+            width: 250px;
+            height: 45px;
+            background: pink;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 5px #ddd;
+            position: absolute;
+        }
+        #mask{
+            position: absolute;
+            background: black;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+    <div id="mask"></div>
+    <div class="reg"><a href="https://www.baidu.com">jump</a></div>
+    <img src="1.jpg">
+    <a href="http://www.baidu.com">jump</a>
+    <h1>hello</h1>
+    <script>
+        var reg=document.querySelector(".reg");
+        var mask=document.querySelector("#mask");
+        var docWidth=document.body.clientWidth;
+        var docHeight=document.body.clientHeight;
+        mask.style.width=docWidth+"px";
+        mask.style.height=docHeight+"px";
+        console.log(docWidth);
+        console.log(docHeight);
+        center(reg);
+    </script>
+</body>
+</html>

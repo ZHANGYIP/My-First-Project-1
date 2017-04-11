@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tab{
+            border: 1px solid green;
+            display: block;
+        }
+        .tab:after,.tab ul:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            float: left;
+            width: 100px;
+            height: 20px;
+            border: 1px solid red;
+            margin-left: 5px;
+            text-align: center;
+            cursor: pointer;
+            background: green;
+            color: #fff;
+            position: relative;
+        }
+        .active{
+            background: orange;
+            top:5px;
+            z-index: 10;
+            border: 1px solid green;
+            border-bottom: 0;
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+        }
+        .tab div{
+            width: 315px;
+            height: 200px;
+            border: 1px solid red;
+            margin-left: 5px;
+            margin-top: 2px;
+            background: #fff;
+            position: relative;
+            display: none;
+        }
+        .tab div.spotlight{
+            border: 1px solid green;
+            z-index: 1;
+            background: orange;
+            display: block;
+        }
+        body{
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+<span class="tab">
+        <ul>
+            <li class="active">one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+        <div class="spotlight">one</div>
+        <div>two</div>
+        <div>three</div>
+    </span>
+<script>
+     var lis=document.querySelectorAll("li");
+     var div=document.querySelector("div");
+     var arry=new Array("<img src='images/1.JPG'>","petre","marry");
+
+     for(var i=0;i<lis.length;i++){
+         lis[i].setAttribute("index",i);
+         lis[i].addEventListener("click",function(){
+             for(var j=0;j<lis.length;j++){
+                 lis[j].className="";
+             }
+             this.className="active";
+             div.innerHTML=arry[this.getAttribute("index")];
+         })
+     }
+
+</script>
+</body>
+</html>

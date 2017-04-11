@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.z_img1{
+    background: url("img/1.jpg")no-repeat;
+    width: 1600px;
+    height: 550px;
+    position: absolute;
+    top: 650px;
+    left: 170px;
+    z-index: 5;
+}
+.z_img2{
+   background: url("img/2.jpg")no-repeat;
+   width: 1600px;
+   height: 550px;
+   position: absolute;
+   display: none;
+   top: 650px;
+   left: 170px;
+   z-index: 10;
+}
+.z_img3{
+  background: url("img/3.jpg")no-repeat;
+  width: 1600px;
+  height: 550px;
+  position: absolute;
+  top: 650px;
+  left: 170px;
+  z-index: 10;
+  display: none;
+}
+.z_img4{
+  background: url("img/4.jpg")no-repeat;
+  width: 1600px;
+  height: 550px;
+  position: absolute;
+  top: 650px;
+  left: 170px;
+  z-index: 10;
+  display: none;
+}
+.z_img5{
+  background: url("img/5.jpg")no-repeat;
+  width: 1600px;
+  height: 550px;
+  position: absolute;
+  top: 650px;
+  left: 170px;
+  z-index: 10;
+  display: none;
+}
+.z_img6{
+    background: url("img/6.jpg")no-repeat;
+    width: 1600px;
+    height: 550px;
+    position: absolute;
+    top: 650px;
+    left: 170px;
+    z-index: 10;
+    display: none;
+}
+span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid black;
+    position: relative;
+    left: 731px;
+    top:335px;
+    cursor: pointer;
+    z-index: 20;
+}
+.backdrop{
+    background: url("img/11.jpg");
+    width: 1600px;
+    height: 650px;
+    position: relative;
+    top: -50px;
+    z-index: 19;
+}
+.z_num{
+    margin-left: 730px;
+    position: relative;
+    z-index: 20;
+}
+.username{
+    width: 500px;
+    height: 25px;
+}
+.bottom{
+    display: inline-block;
+    border: 1px solid #7c9ed4;
+    background: deepskyblue;
+    color: white;
+    width: 60px;
+    height: 29px;
+    line-height: 25px;
+    text-align: center;
+    position: relative;
+    top: -1px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.search{
+    margin-left: 530px;
+    position: relative;
+    top: -189px;
+    z-index: 21;
+}
+.clarity{
+    width: 600px;
+    height: 50px;
+    background: black;
+    opacity: 0.5;
+    margin-left: 515px;
+    position: relative;
+    top: 500px;
+    z-index: 20;
+}
+.aa:hover~.a,.aaa:hover~.b,.aaaa:hover~.c{
+    display: block;
+}
+.z_num1:hover~.z_img2{
+    display: block;
+}
+.z_num2:hover~.z_img3{
+    display: block;
+}
+.z_num3:hover~.z_img4{
+    display: block;
+}
+.z_num4:hover~.z_img5{
+    display: block;
+}
+.z_num5:hover~.z_img6{
+    display: block;
+}

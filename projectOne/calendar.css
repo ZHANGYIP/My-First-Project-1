@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft yahei";
+}
+
+/*  日历的样式  */
+ul{
+    list-style: none;
+}
+.calendar_header dl{
+    height: 40px;
+    line-height: 40px;
+    background: #91ee91;
+    text-align: center;
+}
+.calendar_header dl:after{
+    content:"";
+    clear: both;
+    display: block;
+}
+.calendar_header dd{
+    float: left;
+    display:block;
+    margin-left: .2%;
+    width: 14%;
+    background: #add8e6;
+}
+.calendar{
+    border:1px solid white;
+    width: 100%;
+    margin: auto;
+}
+.calendar_header,.calendar_footer{
+    clear: both;
+    height:40px;
+    line-height: 40px;
+    background: #91ee91;
+}
+.calendar_title ul li{
+    float:left;
+    margin-left: 0.3%;
+    width: 33%;
+    text-align:center;
+    font-size: 20px;
+}
+.calendar_footer{
+    text-align:center;
+    background: #91ee91;
+}
+.calendar_body ol{
+    list-style:none;
+}
+.calendar_body ol li{
+    float: left;
+    margin-top: 2px;
+    margin-left: .2%;
+    background: #add8e6;
+    width: 14%;
+    text-align: center;
+    line-height: 35px;
+}
+.calendar_body li.active{
+    background: #add8e6;
+}
+.calendar_body li.today{
+    background:orange;
+}
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <style type="text/css"></style>
+    <style type="text/css">
+        *{margin:0;padding:0;list-style: none;
+            vertical-align: middle;
+        }
+
+        .wrap{font-family: Microsoft yahei;}
+        /*------------------------------*/
+        .top{height:100px;background:grey;}
+        /*------------------------------*/
+        .con1{height:100px;background:#eee;}
+        .one{margin:-50px 0 0 30px;float:left;}
+        .one li{float:left;}
+        .one li:nth-child(1){width:100px;height: 100px;background:orangered;border-radius: 50%;border:2px solid white;}
+        .one li:nth-child(2){margin-left:20px;line-height: 160%;}
+
+        .one li p:nth-child(1){line-height: 300%;color:white;}
+
+        /*------------------------------*/
+
+        .two{float:right;}
+        .two button{margin-top:30px;}
+        .con2{}
+        /*------------------------------*/
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top"></div>
+    <!-- ************第一模块 -->
+    <div class="con1">
+        <ul class="one">
+            <li></li>
+            <li><p>HELLO</p><p>HELLO</p><p>HELLO</p></li>
+        </ul>
+        <div class="two"><button>BUTTON</button></div>
+    </div>
+    <!-- ************第二模块 -->
+    <div  class="con2"></div>
+</div>
+</body>
+</html>
+<!--
+1\div结构清楚，大盒子wrap
+2 样式要有公共样式
+ -->

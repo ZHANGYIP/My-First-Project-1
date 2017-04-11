@@ -1,0 +1,128 @@
+*{margin:0;padding:0;list-style: none;
+    vertical-align: middle;
+    text-decoration: none;
+}
+body{
+    background: #e8e8e8;
+    font-family: Microsoft yahei;
+}
+/************主体结构***************/
+.food{
+    margin: 0 auto;
+    width:1270px;
+}
+.food_header{
+    height: 400px;
+}
+.food_body{
+}
+#h_body_left{
+    width: 486px;
+    float: left;
+}
+#body_middle{
+    background: white;
+    width: 480px;
+    float: left;
+}
+#body_right{
+    background: white;
+    width: 300px;
+    height: 100%;
+    float: right;
+}
+.food_body:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.food_footer{
+    height: 100px;
+}
+/*-------------顶部tab-----------------*/
+.food_header .food_title{
+    height:30px;
+    width: 1000px;
+    margin-left: 150px;
+}
+.food_header .food_title ul{
+    padding-top: 10px;
+    margin-left: 150px;
+}
+.food_header .food_title ul li{
+    color: #f08181;
+    float: left;
+    width:80px;
+    text-align: center;
+    margin-right: 15px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.food_header ul li.sport{
+    background: #f08181;
+    color: white;
+}
+/*-------------时钟-----------------*/
+#body_right .y_clock{
+    margin-top: 4px;
+    height:50px;
+}
+#body_right .y_clock img{
+    width: 10%;
+}
+/*-------------右边水果-----------------*/
+#body_right .y_fruit{
+    height: 220px;
+}
+#body_right .y_fruit img{
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    top:10px;
+}
+#body_right .y_fruit img.active{
+    top: 20px;
+}
+#body_right .y_bar{
+    background: #f08181;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+/*-------------星期-----------------*/
+
+#body_right .weekday{
+    height: 50px;
+    color: #525f59;
+    font-size: 30px;
+    padding-left: 100px;
+}
+/*-------------底部-----------------*/
+.food_footer{
+    background: #afafaf;
+    font-size: 14px;
+}
+.food_footer ul{
+    height: 30px;
+    line-height: 25px;
+    margin-left: 400px;
+}
+
+.food_footer ul li{
+    float: left;
+    padding-left: 10px;
+}
+.food_footer ul li a{
+    color:black;
+}
+.food_footer p:nth-child(1){
+    margin-left: 500px;
+}
+.food_footer p:nth-child(2){
+    margin-left: 560px;
+}
+.food_footer p:nth-child(3){
+    margin-left: 540px;
+}

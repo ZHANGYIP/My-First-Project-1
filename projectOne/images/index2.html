@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin: 0;padding: 0;}
+        body{
+            background: #e8e8e8;
+        }
+        .food{
+            background: white;
+            margin: 0 auto;
+            width:1200px;
+            border: 1px solid green;
+        }
+
+        /*头部*/
+        .food_header{
+            width: 1200px;
+            height: 260px;
+            /*border: 1px solid black;*/
+            overflow: hidden;
+            position: relative;
+            background: url("pictures/background.png") no-repeat;
+        }
+        .food_header ul{
+            list-style-type: none;
+            height: 260px;
+            line-height: 260px;
+            width: 2400px;
+            position: absolute;
+            top: 15px;
+            left: 0;
+        }
+        .food_header ul li{
+            float: left;
+            text-align: center;
+        }
+
+        /*身体*/
+        .food_body{
+            height: 60%;
+            border: 1px solid green;
+        }
+        #body_left{
+            width: 40%;
+            height: 100%;
+            float: left;
+            border: 1px solid green;
+        }
+        #body_middle{
+            width: 40%;
+            height: 100%;
+            float: left;
+            border: 1px solid green;
+        }
+        #body_right{
+            width: 19%;
+            height: 100%;
+            float: right;
+            border: 1px solid green;
+        }
+        .food_body:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        /*脚注*/
+        .food_footer{
+
+            border: 1px solid green;
+        }
+    </style>
+    <script src="index2.js"></script>
+</head>
+<body>
+<div class="food">
+    <div class="food_header">
+        <ul>
+            <li><img src="pictures/icon1.png"></li>
+            <li><img src="pictures/icon2.png"></li>
+            <li><img src="pictures/icon3.png"></li>
+            <li><img src="pictures/icon4.png"></li>
+        </ul>
+    </div>
+    <script>
+        var scroll=document.querySelector(".food_header");
+        var ul=document.querySelector(".food_header ul");
+        ul.innerHTML+=ul.innerHTML;
+        var left=parseInt(ul.style.left)||0;
+        setInterval(function(){
+            left--;
+            if(left<=-1200){
+                left=0;
+            }
+            ul.style.left=left+"px";
+        },30);
+    </script>
+
+    <div class="food_body">
+        <div id="body_left">分三栏 <br/>分别为列表<br/>  ul与图片关联 <br/> 手风琴 （侯伟）</div>
+        <div id="body_middle"> 分两栏  视频<br/>  tab栏 （小玉玉）</div>
+        <div id="body_right"> 分两栏  图片点击<br> 日历与时钟 （易星）</div>
+    </div>
+
+    <div class="food_footer">
+        作者 版权 感谢
+    </div>
+</div>
+</body>
+</html>

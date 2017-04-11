@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Tools.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <img src="images/1.png"/>
+    <img src="images/2.png"/>
+    <img src="images/c.png"/>
+    <img src="images/3.png"/>
+    <img src="images/4.png"/>
+    <img src="images/c.png"/>
+    <img src="images/5.png"/>
+    <img src="images/6.png"/>
+    <script>
+        var count=0;
+        var date=new Date();
+        var se=date.getSeconds();
+        var before=new Date("2017.3.6");
+        var time=parseInt((date.getTime()-before.getTime())/1000);
+        count+=time;
+        console.log(time);
+        setInterval(function(){
+            var d=new Date();
+            var h= addZero(d.getHours());
+            var m= addZero(d.getMinutes());
+            var s= addZero(d.getSeconds());
+            var imgs=document.querySelectorAll("img");
+            var now=h+"c"+m+"c"+s;
+            count++;
+            // console.log(count);
+            if(count%10==0){
+                var timer3=setInterval(function(){
+                    imgs[6].style.transform="scaleY("+y+")";
+                    if(tag==1){
+                        y-=0.1;
+                    }else{
+                        y+=0.1;
+                    }
+                    // console.log(y);
+                    if(y<-1){
+                        tag=2;
+                    }
+                    if(y>1){
+                        clearInterval(timer3);
+                    }
+                },10)
+            }
+           if(count%60==0){
+                var timer4=setInterval(function(){
+                    imgs[4].style.transform="scaleY("+y+")";
+                    if(tag==1){
+                        y-=0.1;
+                    }else{
+                        y+=0.1;
+                    }
+                    // console.log(y);
+                    if(y<-1){
+                        tag=2;
+                    }
+                    if(y>1){
+                        clearInterval(timer4);
+                    }
+                },10)
+            }
+            for(var i=0;i<imgs.length;i++){
+                imgs[i].src="images/"+now.charAt(i)+".png";
+            }
+            var y=1;
+            var tag=1;
+            var timer2=setInterval(function(){
+                imgs[7].style.transform="scaleY("+y+")";
+                if(tag==1){
+                    y-=0.1;
+                }else{
+                    y+=0.1;
+                }
+                // console.log(y);
+                if(y<-1){
+                    tag=2;
+                }
+                if(y>1){
+                    clearInterval(timer2);
+                }
+            },10)
+        },1000)
+
+    </script>
+</body>
+</html>

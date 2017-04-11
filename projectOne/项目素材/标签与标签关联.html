@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin:0;padding:0;}
+        div{
+            height: 30px;
+            width: 160px;
+            background: orange;
+            border: 1px solid #fd918e;
+            border-radius: 5px;
+            text-align: center;
+        }
+        img{
+            height: 0;
+            transition: height 2s ease;
+        }
+        .spotlight{
+            background: #fd94f9;
+            color:white;
+        }
+        .active{
+            height: 160px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="spotlight">夏威夷果</div>
+    <div>巴旦木</div>
+    <div>碧根果</div>
+        <img src="1.jpg">
+        <img src="2.jpg">
+        <img src="3.jpg" class="active">
+    <script>
+        var divs=document.querySelectorAll("div");
+        var imgs=document.querySelectorAll("img");
+        for(var i=0;i<divs.length;i++){
+            divs[i].setAttribute("index",i);
+            divs[i].addEventListener("mouseover",function(){
+                for(var j=0;j<divs.length;j++){
+                    divs[j].className="";
+                    imgs[j].className="";
+                }
+                this.className="spotlight";
+                imgs[this.getAttribute("index")].className="active";
+            })
+        }
+    </script>
+</body>
+</html>
