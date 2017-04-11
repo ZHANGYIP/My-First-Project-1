@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Tools.js"></script>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        nav{
+            width: 100%;
+            height: 60px;
+            background: green;
+        }
+        .active{
+            position: fixed;
+            top: 0;
+        }
+        .asidebar{
+            display: none;
+        }
+      /*  .sport.sportlight{
+            display: block;
+            position: fixed;
+            top: 400px;
+        }*/
+        .spotlight{
+            display:block;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 180px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <nav>导航</nav>
+    <img src="1.jpg" style="height: 2500px;width: 200px;">
+    <img src="1.jpg" class="asidebar">
+    <div class="asidebar" id="asidebar"></div>
+    <script>
+        // 滚动条滚动事件
+        // scroll窗口的滚动事件
+        window.addEventListener("scroll",function(){
+            var scrollTop=getScrollSize().top;
+            var nav=document.querySelector("nav");
+            var img=document.querySelectorAll("img")[1];
+            if(scrollTop>50){
+                nav.className="active";
+            }else{
+                nav.className="";
+            }
+            if(scrollTop>300){
+                img.className="sportlight"
+            }else{
+                img.className=" ";
+            }
+        });
+        var asidebar=document.querySelector("#asidebar");
+        // 点击右下角元素，滚动值的高度为0；
+        asidebar.addEventListener("click",function(){
+            window.scrollTo(0,0);
+        });
+      /*  var btn=document.querySelector("button");
+        btn.addEventListener("click",function(){
+            window.scrollTo(0,0);
+        })*/
+    </script>
+</body>
+</html>
